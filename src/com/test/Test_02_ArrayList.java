@@ -3,70 +3,70 @@ package com.test;
 import java.util.ArrayList;
 
 public class Test_02_ArrayList {
-	public static void main(String[] args) {
-				
-//		일반적인 문자열 벡터
-		ArrayList al1 = new ArrayList();
-		
-		String str1 = "AAA";
-//		int int2 = 222;
-		Integer int2 = new Integer(222);
-//		char chr3 = 'C';
-		Character chr3 = new Character('C');
-		String str4 = "DDD";
-		String str5 = "EEE";
-		
 	
-//		벡터에 데이터 추가
-		al1.add(str1);
-		al1.add(int2);
-		System.out.println(al1.get(0));
-		System.out.println(al1.get(1));
+	public void testArrayList_1(){
+		ArrayList l = new ArrayList();
 		
-//		벡터에 데이터의 위치를 지정하여 추가
-		al1.add(2, chr3);
-		System.out.println(al1.get(2));
+		//어레이리스트는 기본적인 사용법이 벡터와 같다.
+		// add를 통해 데이터를 추가하면 추가여부를 boolean으로 반환 받는다.
+		boolean isAdd_1 = l.add("aaa");
+		boolean isAdd_2 = l.add("bbb");
+		boolean isAdd_3 = l.add(111);
+		boolean isAdd_4 = l.add('a');
+		boolean isAdd_5 = l.add(true);
 		
-		System.out.println(al1);
+		//사이즈를 확인해 보면 추가한 데이터의 갯수를 확인할 수 있다.
+		System.out.println(l.size());
 		
-//		벡터에서 데이터 삭제
-		al1.remove(0);
-		for(int inx=0;inx<al1.size();inx++){
-			System.out.println(al1.get(inx));
+		//벡터와 마찬가지로 인덱스로 데이터를 가져올 수 있다.
+		System.out.println(l.get(0));
+		
+		//데이터를 끼워넣는 add도 벡터와 같다.
+		l.add(0, "XXX");
+		
+		//데이터를 바꿔치기 하는 set도 마찬가지
+		String yyy = (String)l.set(0, "YYY");
+		
+		//삭제도 같다
+		String removeItem = (String)l.remove(0);
+		
+		//제네릭을 지정하여 선언할 수 있다.
+		ArrayList<String> strL = new ArrayList<String>();
+		strL.add("AAA");
+		strL.add("BBB");
+		strL.add("CCC");
+		strL.add("DDD");
+		strL.add("EEE");
+//		strL.add(111);
+		
+		for(int i=0;i<strL.size();i++){
+			System.out.println(strL.get(i));
 		}
 		
-//		벡터에서 값으로 데이터 삭제
-		al1.remove(int2);
-		for(int inx=0;inx<al1.size();inx++){
-			System.out.println(al1.get(inx));
+		for(String item:strL){
+			System.out.println(item);
 		}
 		
-//		al1.remove('C');
-//		for(int inx=0;inx<al1.size();inx++){
-//			System.out.println(al1.get(inx));
-//		}
+		ArrayList<TestVO> voL = new ArrayList<TestVO>();
+		TestVO vo = new TestVO();
+		vo.setStr1("AAA");
+		vo.setInt1(111);
+		vo.setChr1('x');
+		voL.add(vo);
+		voL.add(vo);
+		voL.add(vo);
 		
-		///////////////////////////////////////////////////////////////////
+		for(TestVO item:voL){
+			System.out.println(item.getStr1()+","+item.getInt1());
+		}
 		
-//		벡터안에 다른 클래스를 추가하기
-		ArrayList al2 = new ArrayList();
-		
-		TestVO vo1 = new TestVO();
-		vo1.setStr1("Test");
-		vo1.setInt1(999);
-		vo1.setChr1('Z');
-		
-		al2.add(vo1);		
-		
-		TestVO vo2 = (TestVO)al2.get(0);
-		
-		System.out.println(vo2.getStr1());
-		System.out.println(vo2.getInt1());
-		System.out.println(vo2.getChr1());
-
 		/*
 		 * Vector와 ArrayList의 가장 큰 차이점은 Vector는 "무조건 동기화" ArrayList는 sychronized 선언했을때만 동기화
 		 * */
-		
+	}
+	
+	public static void main(String[] args) {
+		Test_02_ArrayList obj = new Test_02_ArrayList();
+		obj.testArrayList_1();
 	}
 }

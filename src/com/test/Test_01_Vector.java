@@ -48,8 +48,10 @@ public class Test_01_Vector {
 		//remove메소드를 사용하여 해당 인덱스에 있는 데이터를 벡터로부터 삭제할 수 있다.
 		//데이터를 삭제하게 되면 벡터의 사이즈도 자연히 줄어들게 된다.
 		//또한 삭제한 데이터의 밑에 있던 데이터부터 올라와 그 자리를 채우게 된다.
+		//데이터를 삭제할 때 삭제되는 데이터를 결과값으로 받을 수 있다.
 		System.out.println(v.get(0)+":"+v.size());
-		v.remove(0);
+		String removeItem = (String)v.remove(0);
+		System.out.println("removeItem:"+removeItem);
 		System.out.println(v.get(0)+":"+v.size());
 		
 	}
