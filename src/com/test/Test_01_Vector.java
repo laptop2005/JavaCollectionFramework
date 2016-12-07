@@ -10,7 +10,7 @@ public class Test_01_Vector {
 		Vector v = new Vector();
 		
 		//최초 벡터의 사이즈를 출력해보면 0이다
-		System.out.println(v.size());
+//		System.out.println(v.size());
 		
 		//벡터는 add명령어를 통하여 리스트에 데이터나 객체를 추가할 수 있다.
 		//벡터는 add할때 잘 추가되었는지 여부를 boolean값으로 반환한다.
@@ -21,38 +21,38 @@ public class Test_01_Vector {
 		boolean isAdd_5 = v.add(true);
 		
 		//데이터를 벡터에 추가한 후 사이즈를 출력해보면 추가한 갯수만큼이 출력된다.
-		System.out.println(v.size());
+//		System.out.println(v.size());
 		
 		//addElement는 기본적으로 add와 같은 기능을 한다 
 		//차이점은 addElement가 데이터를 추가할때 데이터 동기화를 한다고 하는데
 		//신뢰성이 떨어져 synchronize 블럭으로 처리하는 것을 권장한다.
 		v.addElement("ccc");
 		
-		System.out.println(v.size());
+//		System.out.println(v.size());
 		
 		//현재 벡터의 0번째에는 "aaa"가 들어있다.
-		System.out.println(v.get(0));
+//		System.out.println(v.get(0));
 		
 		//벡터에서 이 인덱스를 지정하여 add하면 해당 인덱스에 데이터를 끼워넣고  
 		//그 뒤의 데이터들은 한칸씩 뒤로 밀려 인덱스가 1씩 증가하게 된다.
 		v.add(1,"ddd");
-		System.out.println(v.get(1));
+//		System.out.println(v.get(1));
 		
 		//set 메소드를 사용하면 해당 인덱스에 있던 데이터를 리턴으로 반환하고
 		//지정해준 데이터를 그 자리에 덮어쓰게 된다.
 		String v0 = (String)v.set(0, "eee");
-		System.out.println(v0);
-		System.out.println(v.get(0));
+//		System.out.println(v0);
+//		System.out.println(v.get(0));
 		
 		
 		//remove메소드를 사용하여 해당 인덱스에 있는 데이터를 벡터로부터 삭제할 수 있다.
 		//데이터를 삭제하게 되면 벡터의 사이즈도 자연히 줄어들게 된다.
 		//또한 삭제한 데이터의 밑에 있던 데이터부터 올라와 그 자리를 채우게 된다.
 		//데이터를 삭제할 때 삭제되는 데이터를 결과값으로 받을 수 있다.
-		System.out.println(v.get(0)+":"+v.size());
+//		System.out.println(v.get(0)+":"+v.size());
 		String removeItem = (String)v.remove(0);
-		System.out.println("removeItem:"+removeItem);
-		System.out.println(v.get(0)+":"+v.size());
+//		System.out.println("removeItem:"+removeItem);
+//		System.out.println(v.get(0)+":"+v.size());
 		
 	}
 	
@@ -151,6 +151,7 @@ public class Test_01_Vector {
 	public static void main(String[] args) {
 		
 		Test_01_Vector obj = new Test_01_Vector();
-		obj.testVector_4();
+		obj.testVector_1();
+		
 	}
 }

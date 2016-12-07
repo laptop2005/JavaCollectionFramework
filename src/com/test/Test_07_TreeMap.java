@@ -11,6 +11,7 @@ public class Test_07_TreeMap {
 		
 		//HashMap에 Integer, String 으로 넣었을때
 		tm.put(new Integer(1), "BBB");
+		
 		TestVO vo = new TestVO();
 		
 		//HashMap에 Object, Object 로 넣었을때

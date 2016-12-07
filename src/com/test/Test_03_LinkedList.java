@@ -39,9 +39,31 @@ public class Test_03_LinkedList {
 		
 	}
 	
+	public void testLinkedList_2(){
+		LinkedList<String> ll = new LinkedList<String>();
+		//add는 리스트의 마지막 인덱스에 데이터를 추가하여 넣는다.
+		ll.add("AAA");
+		ll.add("BBB");
+		ll.add("CCC");
+		ll.add("DDD");
+		ll.add("EEE");
+		
+		//하지만 push는 첫번째 인덱스에 데이터를 밀어넣게 된다.
+		ll.push("XXX");
+		
+		//pop은 가장 첫번째 데이터를 뽑아내고 리스트에서 삭제한다.
+		//링크드리스트는 queue이기 때문이다 만약 stack이라면 가장 마지막 데이터를 뽑아내고 리스트에서 삭제하게 될것이다.
+		String pop = ll.pop();
+		
+		//poll은 가장 첫번째 데이터를 뽑아내고 리스트에서 삭제한다.
+		//결론적으로 링크드리스트의 pop과 poll은 같은 기능이다.
+		String poll = ll.poll();
+		
+	}
+	
 	public static void main(String[] args) {
 		Test_03_LinkedList obj = new Test_03_LinkedList();
-		obj.testLinkedList_1();
+		obj.testLinkedList_2();
 		
 	}
 }
